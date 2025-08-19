@@ -10,12 +10,18 @@ function Header(props){
   )
 }
 
-function Nav(){
+function Nav(props){
+  const lis = []
+  for(let i=0; i < props.topics.length; i++) {
+    let t = props.topics[i];
+    lis.push(<li key={t.id}><a href={'/read/'+t.id}>{t.title}</a></li>)
+  }
+
   return(
     <nav>
-      <li><a href="/read/1"> html </a></li>
-      <li><a href="/read/2"> css </a></li>
-      <li><a href="/read/3"> js </a></li>
+      <ol>
+        {lis}
+      </ol>
     </nav>
   )
 }
@@ -30,10 +36,17 @@ function Article(){
 }
 
 function App() {
+
+  const topics = [
+    {id:1, title:'html', body:'html is...'},
+    {id:2, title:'css', body:'css is...'},
+    {id:3, title:'javascript', javascript:'html is...'}
+  ]
+
   return (
     <div className="App">
       <Header title="React"></Header>
-      <Nav></Nav>
+      <Nav topics={topics}></Nav>
       <Article></Article>
     </div>
   );
