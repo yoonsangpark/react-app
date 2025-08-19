@@ -5,7 +5,7 @@ function Header(props){
   console.log("props", props, props.title)
   return (
     <div>
-      <h1><a href="/" onClick={function(event){
+      <h1><a href="/" onClick={(event)=>{
         event.preventDefault();
         props.onChangeMode();
       }}> {props.title} </a></h1>
@@ -48,7 +48,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="React" onChangeMode={function(){
+      <Header title="React" onChangeMode={()=>{
         alert('Header');
       }}></Header>
       <Nav topics={topics}></Nav>
