@@ -31,11 +31,13 @@ public
 README.md
 src
 
-
 C:\ws\react-app> npm i
 
 C:\ws\react-app> npm start
 
+C:\ws\react-app> npm run build
+
+C:\ws\react-app> npx serve -s build
 
 //--------------------------------------------------------------------------------
 //[3]
